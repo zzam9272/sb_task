@@ -1,26 +1,26 @@
 var $ = jQuery.noConflict();
 
 var app = app || {};
-!function(){
+!function () {
 	"use strict";
 
 	app.form = {
-		init: function() {
+		init: function () {
 			var errorEmailMsg = 'Your E-Mail is not valid';
-			var errorPasswordMsg =  'Your Password is not valid';
+			var errorPasswordMsg = 'Your Password is not valid';
 
 			// Validate form before submitting
 			// Add the error messages if the email
 			// or password is not valid
-			$('form').submit(function(event) {
+			$('form').submit(function (event) {
 
 				// To complete
 				// event.preventDefault();
-				
+
 				//Obtain the values from form elements
 				var emailAddress = document.getElementById('email').value;
 				var password = document.getElementById('password').value;
-				
+
 				//Obtain the error message placeholders
 				var emailError = document.getElementById('emailError');
 				var passwordError = document.getElementById('passwordError');
@@ -28,7 +28,7 @@ var app = app || {};
 				//Define the error variables with a default value
 				var emailErrorVal = true;
 				var passwordErrorVal = true;
-				
+
 				//Define the function to display errors on form
 				function displayError(elemId, errorMsg) {
 					elemId.innerHTML = errorMsg;
@@ -36,7 +36,7 @@ var app = app || {};
 				}
 
 				//Validate email address
-                if(app.form.validateEmail(emailAddress) == false) {
+				if (app.form.validateEmail(emailAddress) == false) {
 					displayError(emailError, errorEmailMsg);
 				} else {
 					displayError(emailError, '');
@@ -44,7 +44,7 @@ var app = app || {};
 				}
 
 				//Validate password
-				if(app.form.validatePassword(password) == false) {
+				if (app.form.validatePassword(password) == false) {
 					displayError(passwordError, errorPasswordMsg);
 				} else {
 					displayError(passwordError, '');
@@ -52,10 +52,10 @@ var app = app || {};
 				}
 
 				//Prevent form submission if errors exist
-				if((emailErrorVal || passwordErrorVal) == true) {
-				  return false;
-				} 
-				
+				if ((emailErrorVal || passwordErrorVal) == true) {
+					return false;
+				}
+
 			});
 		},
 		/**
@@ -65,7 +65,7 @@ var app = app || {};
 		 * 
 		 * @return {Boolean} If email is valid return true otheriwse false
 		 */
-		validateEmail: function(email) {
+		validateEmail: function (email) {
 			var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 			return re.test(email);
 		},
@@ -76,7 +76,7 @@ var app = app || {};
 		 * 
 		 * @return {Boolean} If password is valid return true otheriwse false
 		 */
-		validatePassword: function(password) {
+		validatePassword: function (password) {
 			// To complete
 			//check that password contains characters other than just white space
 			var re = /\S/;

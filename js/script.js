@@ -15,7 +15,6 @@ var app = app || {};
 			$('form').submit(function (event) {
 
 				// To complete
-				// event.preventDefault();
 
 				//Obtain the values from form elements
 				var emailAddress = document.getElementById('email').value;

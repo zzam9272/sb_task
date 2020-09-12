@@ -1,0 +1,254 @@
+/*****************************************************************
+ * Fonts
+ *****************************************************************/
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600);
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,700);
+/*****************************************************************
+ * CSS Resets
+ *****************************************************************/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+html {
+  line-height: 1;
+  font-size: 18px;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+q, blockquote {
+  quotes: none;
+}
+
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+a img {
+  border: none;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block;
+}
+
+/*****************************************************************
+ * Base Root styles
+ *****************************************************************/
+
+body {
+  background-color: #e9eff3;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-size: 62.5%;
+  color: #222;
+  -webkit-text-size-adjust: 100%;
+}
+
+button, input {
+  outline: 0;
+}
+
+/*****************************************************************
+ * Typography
+ *****************************************************************/
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+}
+
+a {
+  color: #222;
+}
+
+input {
+  border-radius: 0;
+}
+
+/********************************************************************
+* Login Form
+*********************************************************************/
+#login .main-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 760px;
+} 
+
+#login .account-login {
+  display: flex;
+  justify-content: space-between;
+}
+
+#login .account-login .container {
+  position: relative;
+  width: 43%;
+  min-height: 310px;
+  padding: 20px;
+  background: #fff;
+}
+
+#login .account-login h2 {
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  margin-bottom: 22px;
+}
+
+#login .account-login h2::after {
+  content: '';
+  display: block;
+  margin-top: 10px;
+  height: 1px;
+  width: 100%;
+  background: #cecece;
+}
+
+#login .account-login p {
+  font-size: 0.8rem;
+  font-weight: bold;
+  line-height: 17px;
+}
+
+#login .account-login input {
+  display: block;
+  border: 1px solid #cecece;
+  height: 25px;
+  width: 95%;
+  padding: 7px;;
+  margin-bottom: 23px;
+}
+
+#login .account-login label {
+  font-size: 0.75rem;
+  font-weight: bold;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+#login .account-login label.error {
+  display: none;
+  font-size: 0.6rem;
+  color: #ff0000;
+  margin-top: -12px;
+  margin-bottom: 20px;
+}
+
+#login .account-login label.error.active {
+  display: block;
+  -webkit-animation-name: zoom;
+  animation-name: zoom;
+  -webkit-animation-duration: 0.4s;
+  animation-duration: 0.4s;
+}
+
+#login .account-login .checkbox {
+  display: block;
+  position: relative;
+}
+
+#login .account-login .checkbox input {
+  display: inline-block;
+  height: 20px;
+  width: 20px;
+  margin-left: -1px;
+}
+
+#login .account-login .checkbox label {
+  position: absolute;
+  top: 7px;
+  left: 27px;
+}
+
+#login .account-login button {
+  background: #009eff;
+  color: #fff;
+  text-transform: uppercase;
+  padding: 10px;
+  width: 180px;
+  border: 1px solid #017cc7;
+  border-radius: 3px;
+  letter-spacing: 0.5px;
+}
+
+#login .account-login button:hover {
+  cursor: pointer;
+}
+
+#login .account-login button:active{
+  background: #037fcc;
+}
+
+#login .account-login .new-user button {
+  position: absolute;
+  bottom: 24px;
+}
+
+@-webkit-keyframes zoom {
+  0%   {font-size: 0.6rem;}
+  50%  {font-size: 0.7rem;}
+  100% {font-size: 0.6rem;}
+}
+@keyframes zoom {
+  0%   {font-size: 0.6rem;}
+  50%  {font-size: 0.7rem;}
+  100% {font-size: 0.6rem;}
+}
+
+/********************************************************************
+* Media queries
+*********************************************************************/
+@media only screen and (max-width: 810px) {
+  #login .main-container {
+    width: 95%;
+  }
+}
+
+@media only screen and (max-width: 645px) {
+  #login .main-container {
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: none;
+    width: 90%;
+    margin: 20px auto;
+  }
+  #login .account-login {
+    justify-content: center;
+    flex-direction: column;
+  }
+  #login .account-login .container {
+    width: unset;
+    margin-bottom: 20px;
+  }
+}
